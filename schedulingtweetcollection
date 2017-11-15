@@ -1,0 +1,6 @@
+#I could not get this to work on AWS so it collects tweets daily on my computer instead 
+install.packages("taskscheduleR")
+library(taskscheduler)
+taskscheduler_create(taskname = "myfancyscriptdaily", rscript = myscript,
+schedule = "DAILY", starttime = "09:10", startdate = format(Sys.Date()+1, "%d/%m/%Y"))
+taskscheduler_create(taskname = "twittertask", rscript = "C:\\Users\\smpep\\Desktop\\ESPARK DATA\\espark\\rscripttwitter.R",  schedule = "DAILY", starttime = "09:10", startdate = format(Sys.Date()+1, "%d/%m/%Y"))
